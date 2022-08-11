@@ -7,6 +7,11 @@ include "Controller/CategoriaProdutoController.php";
 include "Controller/FuncionarioController.php";
 */
 
+use App\Controller\CategoriaProdutoController;
+use App\Controller\FuncionarioController;
+use App\Controller\PessoaController;
+use App\Controller\ProdutoController;
+
 // Comando que pega a rota solicitada/escrita pelo usuário.
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 

@@ -1,5 +1,10 @@
 <?php
 
+namespace App\DAO;
+
+use App\Model\PessoaModel;
+use \PDO;
+
 class PessoaDAO
 {
 
@@ -8,7 +13,7 @@ class PessoaDAO
   public function __construct()
   {
 
-    $dsn = "mysql:host=localhost:3307;dbname=db_mvc";
+    $dsn = "mysql:host=localhost:3306;dbname=db_mvc";
 
     $this->conexao = new PDO($dsn, "root", "etecjau");
 
@@ -84,7 +89,7 @@ class PessoaDAO
 
     $stmt->execute();
 
-    return $stmt->fetchObject("PessoaModel");
+    return $stmt->fetchObject("App\Model\PessoaModel");
 
   }
 
