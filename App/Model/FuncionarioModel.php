@@ -4,12 +4,12 @@ namespace App\Model;
 
 use App\DAO\FuncionarioDAO;
 
-class FuncionarioModel
+class FuncionarioModel extends Model
 {
 
   public $id, $nome, $cadastro, $cpf;
 
-  public $rows;
+  //public $rows;
 
   public function Save()
   {

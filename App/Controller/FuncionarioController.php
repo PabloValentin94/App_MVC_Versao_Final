@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\FuncionarioModel;
 
-class FuncionarioController
+class FuncionarioController extends Controller
 {
 
   public static function Index()
@@ -14,7 +14,9 @@ class FuncionarioController
 
       $model->GetAllRows();
 
-      include "View/Modules/Funcionario/FuncionarioListagem.php";
+      //include "View/Modules/Funcionario/FuncionarioListagem.php";
+
+      parent::render("Funcionario/FuncionarioListagem", $model);
 
   }
 
@@ -32,7 +34,9 @@ class FuncionarioController
 
       // var_dump($model);
 
-      include "View/Modules/Funcionario/FuncionarioForm.php";
+      //include "View/Modules/Funcionario/FuncionarioForm.php";
+
+      parent::render("Funcionario/FuncionarioForm", $model);
 
   }
 

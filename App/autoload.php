@@ -3,38 +3,56 @@
 spl_autoload_register(function ($nome_classe)
 {
 
-  /*echo "Include de: " . $nome_classe . "<br/>";
+    $arquivo = BASEDIR . $nome_classe . ".php";
 
-  echo dirname(__FILE__);*/
+    if(file_exists($arquivo))
+    {
 
-  include '../' . $nome_classe . ".php";
+        include $arquivo;
 
-  /* $classe_controller =  "Controller/" . $nome_classe . ".php";
-  $classe_model =  "Model/" . $nome_classe . ".php";
-  $classe_DAO =  "DAO/" . $nome_classe . ".php";
+    }
 
-  // include "classes/". $nome_classe . "class.php";
+    else
+    {
 
-  if(file_exists($classe_controller))
-  {
+        exit("Arquivo inexistente! Arquivo solicitado: ". $arquivo);
 
-    include $classe_controller;
+    }
 
-  }
+    /*echo "Include de: " . $nome_classe . "<br/>";
 
-  else if(file_exists($classe_model))
-  {
+    echo dirname(__FILE__);
 
-    include $classe_model;
+    include '../' . $nome_classe . ".php";*/
 
-  }
+    /*
+    $classe_controller =  "Controller/" . $nome_classe . ".php";
+    $classe_model =  "Model/" . $nome_classe . ".php";
+    $classe_DAO =  "DAO/" . $nome_classe . ".php";
 
-  else if(file_exists($classe_DAO))
-  {
+    // include "classes/". $nome_classe . "class.php";
 
-    include $classe_DAO;
+    if(file_exists($classe_controller))
+    {
 
-  } */
+      include $classe_controller;
+
+    }
+
+    else if(file_exists($classe_model))
+    {
+
+      include $classe_model;
+
+    }
+
+    else if(file_exists($classe_DAO))
+    {
+
+      include $classe_DAO;
+
+    }
+    */
 
 });
 

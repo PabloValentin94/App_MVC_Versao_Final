@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\PessoaModel;
 
-class PessoaController
+class PessoaController extends Controller
 {
 
   public static function Index()
@@ -14,7 +14,9 @@ class PessoaController
 
       $model->GetAllRows();
 
-      include "View/Modules/Pessoa/PessoaListagem.php";
+      //include "View/Modules/Pessoa/PessoaListagem.php";
+
+      parent::render("Pessoa/PessoaListagem", $model);
 
   }
 
@@ -32,7 +34,9 @@ class PessoaController
 
       // var_dump($model);
 
-      include "View/Modules/Pessoa/PessoaForm.php";
+      //include "View/Modules/Pessoa/PessoaForm.php";
+
+      parent::render("Pessoa/PessoaForm", $model);
 
   }
 

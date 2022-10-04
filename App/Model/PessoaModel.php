@@ -4,12 +4,12 @@ namespace App\Model;
 
 use App\DAO\PessoaDAO;
 
-class PessoaModel
+class PessoaModel extends Model
 {
 
   public $id, $nome, $cpf, $data_nascimento;
 
-  public $rows;
+  //public $rows;
 
   public function Save()
   {

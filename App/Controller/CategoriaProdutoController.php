@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\CategoriaProdutoModel;
 
-class CategoriaProdutoController
+class CategoriaProdutoController extends Controller
 {
 
   public static function Index()
@@ -14,7 +14,9 @@ class CategoriaProdutoController
 
       $model->GetAllRows();
 
-      include "View/Modules/Categoria_Produto/CategoriaProdutoListagem.php";
+      //include "View/Modules/Categoria_Produto/CategoriaProdutoListagem.php";
+
+      parent::render("Categoria_Produto/CategoriaProdutoListagem", $model);
 
   }
 
@@ -32,7 +34,9 @@ class CategoriaProdutoController
 
         // var_dump($model);
 
-        include "View/Modules/Categoria_Produto/CategoriaProdutoForm.php";
+        //include "View/Modules/Categoria_Produto/CategoriaProdutoForm.php";
+
+        parent::render("Categoria_Produto/CategoriaProdutoForm", $model);
 
   }
 

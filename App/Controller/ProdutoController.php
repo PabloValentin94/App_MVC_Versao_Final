@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\ProdutoModel;
 
-class ProdutoController
+class ProdutoController extends Controller
 {
 
   public static function Index()
@@ -14,25 +14,29 @@ class ProdutoController
 
       $model->GetAllRows();
 
-      include "View/Modules/Produto/ProdutoListagem.php";
+      //include "View/Modules/Produto/ProdutoListagem.php";
+
+      parent::render("Produto/ProdutoListagem", $model);
 
   }
 
   public static function Form()
   {
 
-    $model = new ProdutoModel();
+      $model = new ProdutoModel();
 
-    if(isset($_GET['id']))
-    {
+      if(isset($_GET['id']))
+      {
 
-      $model = $model->GetById((int) $_GET['id']);
+        $model = $model->GetById((int) $_GET['id']);
 
-    }
+      }
 
-    // var_dump($model);
+      // var_dump($model);
 
-      include "View/Modules/Produto/ProdutoForm.php";
+      //include "View/Modules/Produto/ProdutoForm.php";
+
+      parent::render("Produto/ProdutoForm", $model);
 
   }
 

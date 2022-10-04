@@ -33,12 +33,14 @@ class FuncionarioDAO extends DAO
   public function Update(FuncionarioModel $model)
   {
 
-    $sql = "UPDATE Funcionario SET nome=? WHERE id = ?";
+    $sql = "UPDATE Funcionario SET nome=?, cadastro=?, cpf=? WHERE id = ?";
 
     $stmt = $this->conexao->prepare($sql);
 
     $stmt->bindValue(1, $model->nome);
-    $stmt->bindValue(2, $model->id);
+    $stmt->bindValue(2, $model->cadastro);
+    $stmt->bindValue(3, $model->cpf);
+    $stmt->bindValue(4, $model->id);
 
     $stmt->execute();
 
